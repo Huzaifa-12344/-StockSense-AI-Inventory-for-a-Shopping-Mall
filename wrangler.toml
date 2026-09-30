@@ -1,0 +1,40 @@
+name = "stocksense-inventory"
+type = "javascript"
+account_id = ""
+workers_dev = true
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[build]
+cwd = "."
+command = "npm run build"
+main = "dist/backend/index.js"
+
+[env.development]
+name = "stocksense-inventory-dev"
+
+[env.production]
+name = "stocksense-inventory"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "stocksense-db"
+database_id = ""
+
+[env.development.vars]
+ENVIRONMENT = "development"
+API_KEY = "dev-key-change-in-production"
+OPENAI_MODEL = "gpt-3.5-turbo"
+ENABLE_AI_ASSISTANT = true
+LOG_LEVEL = "debug"
+
+[env.production.vars]
+ENVIRONMENT = "production"
+API_KEY = "REPLACE_WITH_SECURE_KEY"
+OPENAI_MODEL = "gpt-4"
+ENABLE_AI_ASSISTANT = true
+LOG_LEVEL = "info"
+ADMIN_EMAIL = "inventory@nowsheramall.pk"
+
+[[triggers.crons]]
+cron = "0 * * * *"

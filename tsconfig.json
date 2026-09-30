@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "declaration": true,
+    "sourceMap": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@components/*": ["src/frontend/components/*"],
+      "@pages/*": ["src/frontend/pages/*"],
+      "@hooks/*": ["src/frontend/hooks/*"],
+      "@api/*": ["src/frontend/api/*"],
+      "@styles/*": ["src/frontend/styles/*"],
+      "@backend/*": ["src/backend/*"],
+      "@shared/*": ["src/shared/*"]
+    },
+    "types": ["vite/client", "vitest/globals", "@cloudflare/workers-types"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", ".wrangler"]
+}
